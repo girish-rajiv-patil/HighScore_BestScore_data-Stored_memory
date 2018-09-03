@@ -1,0 +1,34 @@
+
+	  //================================= Game data stored in cookies cache memory  for browers in COCOS2D - JAVASCRIPT========================
+
+
+	  key = "girish-rajiv-patil.github.io";
+	  var currentScore = self.currentScore; //updating data every time
+	    
+	  var old_Data = cc.sys.localStorage.getItem(key);
+	  console.log("OLD Data : ",old_Data);
+	  if(currentScore > old ){
+	    console.log("New Data:  ",currentScore);
+	    cc.sys.localStorage.setItem(key, currentScore);
+	  }
+	  
+
+
+
+
+	//================================== Game data stored in cache memory PC in COCOS2D - C++ ==============================
+
+
+	string key = "girish-rajiv-patil.github.io";
+	int cScore = current_score;
+        
+        UserDefault* userData = UserDefault::getInstance();
+        int highScore = userData->getIntegerForKey(key, 0);
+        
+        if ( cScore > highScore )
+        {
+
+          highScore = score;        
+          string high =  StringUtils::toString( highScore );
+          userData->setIntegerForKey(key, highScore);
+	}  
